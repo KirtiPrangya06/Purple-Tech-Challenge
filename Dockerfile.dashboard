@@ -1,0 +1,11 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir rich requests
+
+COPY dashboard/ ./dashboard/
+
+EXPOSE 8001
+
+CMD ["python3", "dashboard/live_dashboard.py"]
